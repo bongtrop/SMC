@@ -29,6 +29,7 @@ Simulator Detail
     -1
     2
 
+
   ------------------------
   Instruction have 3 class
   ------------------------
@@ -56,6 +57,7 @@ Simulator Detail
       Bits 24-22 opcode
   		Bits 21-0 dont use
 
+
   ------------------------
   Instruction of Simulator
   ------------------------
@@ -71,12 +73,14 @@ Simulator Detail
     halt : 110 : O : exit
     noop : 111 : O : do noting
 
+
   ---------------
   Have 8 Register
   ---------------
 
     $0, $1, $2, $3, $4, $5, $6, $7
     For all init by zero
+
 
   -----------------------
   Memory have 65536 words
@@ -93,7 +97,9 @@ Usage
 =====
 
   > main.py [INPUT ASSEMBLY FILE]
+
 or you can print output to file
+
   > main.py [INPUT ASSEMBLY FILE] > [OUTPUT]
 
 
@@ -103,29 +109,40 @@ Class
 ----
 Main
 ----
+
 Start Simulator
+
 
 ----
 Memory
 ----
+
 Simulator Memory
+
 
 ----
 Register
 ----
+
 Simulator Register
+
 
 ----
 ALU
 ----
+
 Simulator ALU
+
 
 ----
 Translator
 ----
+
 Translator Dec Instruction to our Data Structure
+
 
 ----
 Reportor
 ----
+
 Report working of Simulator
