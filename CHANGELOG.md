@@ -1,11 +1,16 @@
 SMC changelog
 ==========================
 
+0.2.4
+-----
+    * Create Readme.md
+
 0.2.3
 -----
     * Add Example Class
 
 0.2.2
+-----
     * Add reportor Class
 
 0.2.1
