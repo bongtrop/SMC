@@ -1,6 +1,10 @@
 SMC changelog
 ==========================
 
+0.2.1
+-----
+    * Add Main Class
+
 0.2.0
 -----
     * Add Register Class
