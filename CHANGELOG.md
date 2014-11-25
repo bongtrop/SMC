@@ -1,6 +1,9 @@
 SMC changelog
 ==========================
 
+0.2.2
+    * Add reportor Class
+
 0.2.1
 -----
     * Add Main Class
