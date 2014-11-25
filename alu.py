@@ -9,12 +9,12 @@ def nand(a, b):
   result = ""
 
   for i in range(0,32):
-    if (not (a[i] and b[i])):
+    if not (a[i]=='1' and b[i]=='1'):
       result+='1'
     else:
       result+='0'
 
-  return int(result, 2)
+  return translator.bin2com2s(result)
 
 #adder
 def add(a, b):
