@@ -1,6 +1,11 @@
 SMC changelog
 ==========================
 
+0.2.5
+-----
+    * Fix Bug ALU Class
+    * Fix Bug Translator Class
+
 0.2.4
 -----
     * Create Readme.md

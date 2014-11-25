@@ -1,8 +1,10 @@
+import translator
+
 #nand gate
 def nand(a, b):
 
-  a = com_2s(a)
-  b = com_2s(b)
+  a = translator.com2s2bin(a)
+  b = translator.com2s2bin(b)
 
   result = ""
 
