@@ -87,6 +87,37 @@ Simulator Detail
   -----------------------
 
 
+  ----------
+  Psudo Code
+  ----------
+
+    Init Object
+    Load Instruction to memory object
+
+    exited = True
+
+    while not exited:
+      get instruction from memory on address pc
+      pc = pc + 1
+      translate instruction
+      if opcode=0:
+        rd = rs + rt
+      elif opcode=1:
+        rd = rs ^ rt
+      elif opcode=2:
+        rt = mem(rs+offset)
+      elif opcode=3:
+        mem(rs+offset) = rt
+      elif opcode=4:
+        if rs=rt:
+          pc = pc + offset
+      elif opcode=5:
+        rd = pc
+        pc = rs
+      elif opcode=6:
+        exited = True
+
+
 Requirements
 ============
 

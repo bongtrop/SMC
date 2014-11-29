@@ -28,6 +28,8 @@ re = reportor.reportor(numMemory=len(lines), startSign='@@@', mem=mem.getAll(), 
 
 #Init variable
 exited = False
+exception = False
+cause = ""
 pc = 0
 
 re.report()
@@ -52,13 +54,24 @@ while not exited:
     a = reg.get(ins["rs"])
     offset = ins["offset"]
     addr = alu.add(a, offset)
+
+    if addr<0:
+      exception = True
+      cause = "lw failed (Address negative)"
+      break
+
     reg.set(ins["rt"], mem.get(addr))
   elif ins["op"]==3:
     a = reg.get(ins["rs"])
     b = reg.get(ins["rt"])
     offset = ins["offset"]
-    print ins["offset"]
     addr = alu.add(a, offset)
+
+    if addr<0:
+      exception = True
+      cause = "sw failed (Address negative)"
+      break
+
     mem.set(addr, b)
   elif ins["op"]==4:
     a = reg.get(ins["rs"])
@@ -66,6 +79,11 @@ while not exited:
     offset = ins["offset"]
     if (alu.equal(a, b)):
       pc = pc+offset
+      if pc<0:
+        exception = True
+        cause = "beq failed (Address negative)"
+        break
+
   elif ins["op"]==5:
     reg.set(ins["rd"], pc)
     a = reg.get(ins["rs"])
@@ -76,4 +94,7 @@ while not exited:
   re.update(mem.getAll(), reg.getAll(), pc)
   re.report()
 
-re.summary()
+if exception:
+  print "Error: " + cause
+else:
+  re.summary()
